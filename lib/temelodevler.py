@@ -4,6 +4,7 @@
 """
 Topoğrafyada kullanılan temel ödev hesapları
 """
+#  NOT : Programın hesap makinesinde yapılacak işlem ile kıyaslaması yapılacak.
 
 from mat_fonk import *
 import math
@@ -26,11 +27,10 @@ def temelodev1(yA, xA, semt, mesafe):
     return yB, xB
 
 def temelodev2(yA, xA, yB, xB):
-    #  Bu kısım yanlış, daha sonra devam edilecek
     delta_y = yB - yA
     delta_x = xB - xA
-    semt = math.atan(delta_y / delta_x) + bolgesecimi(delta_y, delta_x)
-    mesafe = delta_y / math.sin( grad2radyan(semt) )
+    semt = radyan2grad(math.atan(delta_y / delta_x)) + bolgesecimi(delta_y, delta_x)
+    mesafe =  delta_y / math.sin( grad2radyan( semt ) )
     return semt, mesafe
 
 def temelodev3():
@@ -40,4 +40,4 @@ def temelodev4():
     pass
 
 if __name__ == "__main__":
-    print temelodev2(250,234,123,250)
+    pass
