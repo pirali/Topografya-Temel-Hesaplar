@@ -29,8 +29,17 @@ def temelodev1(yA, xA, semt, mesafe):
 def temelodev2(yA, xA, yB, xB):
     delta_y = yB - yA
     delta_x = xB - xA
-    semt = radyan2grad(math.atan(delta_y / delta_x)) + bolgesecimi(delta_y, delta_x)
-    mesafe =  delta_y / math.sin( grad2radyan( semt ) )
+    
+    try:
+        semt = radyan2grad(math.atan(delta_y / delta_x)) + bolgesecimi(delta_y, delta_x)
+    except:
+        semt = 0
+        
+    try:
+        mesafe =  delta_y / math.sin( grad2radyan( semt ) )
+    except:
+        mesafe =  delta_x / math.cos( grad2radyan( semt ) )
+        
     return semt, mesafe
 
 def temelodev3():
