@@ -44,16 +44,14 @@ def temelodev2(yA, xA, yB, xB):
 
 def temelodev3(AB_semt, B_acisi):
     B_semt = AB_semt + B_acisi
-    if ( B_semt <= 200 ):
+    if ( B_semt < 200 ):
         B_semt = B_semt + 200
-    elif ( B_semt > 200 ) and ( B_semt < 400 ):
+    elif ( B_semt >= 200 ) and ( B_semt < 600 ):
         B_semt = B_semt - 200
-    elif ( B_semt > 400 ):
-        B_semt = B_semt - 400
-        if ( B_semt <= 200 ):
-            B_semt = B_semt + 200
-        elif ( B_semt > 200 ) and ( B_semt < 400 ):
-            B_semt = B_semt - 200
+    elif ( B_semt >= 600 ):
+        B_semt = B_semt - 600
+    else:
+        pass
     return B_semt
 
 def temelodev4(yA, xA, yB, xB, yP, xP):
