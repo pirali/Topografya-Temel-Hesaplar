@@ -42,25 +42,11 @@ def temelodev2(yA, xA, yB, xB):
         
     return semt, mesafe
 
-def temelodev3(AB_semt, B_acisi):
-    B_semt = AB_semt + B_acisi
-    if ( B_semt <= 200 ):
-        B_semt = B_semt + 200
-    elif ( B_semt > 200 ) and ( B_semt < 400 ):
-        B_semt = B_semt - 200
-    elif ( B_semt > 400 ):
-        B_semt = B_semt - 400
-        if ( B_semt <= 200 ):
-            B_semt = B_semt + 200
-        elif ( B_semt > 200 ) and ( B_semt < 400 ):
-            B_semt = B_semt - 200
-    return B_semt
+def temelodev3():
+    pass
 
-def temelodev4(yA, xA, yB, xB, yP, xP):
-    BP = temelodev2(yP, xP, yB, xB)
-    BA = temelodev2(yA, xA, yB, xB)
-    B_acisi = (BP.__getitem__(0) - BA.__getitem__(0))
-    return B_acisi
+def temelodev4():
+    pass
 
 if __name__ == "__main__":
     pass
