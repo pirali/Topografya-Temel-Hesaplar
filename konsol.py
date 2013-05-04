@@ -6,13 +6,16 @@ Topoðrafya Temel Hesaplar programýnýn
 konsoldan menu uygulamasý.
 """
 
-import lib.temelodevler
-import lib.mat_fonk
-import lib.konsol_fonk
 import locale
 
+import lib.temelodevler
+
+import lib.mat_fonk
+
+import lib.konsol_fonk
+
 #Türkçe karakterler düzeltmesis
-locale.setlocale(locale.LC_ALL,"")
+locale.setlocale(locale.LC_ALL, "")
 
 menu_calistir = True
 
@@ -81,4 +84,4 @@ while menu_calistir:
         menu_calistir = False
     else:
         continue
-# None
+        # None
