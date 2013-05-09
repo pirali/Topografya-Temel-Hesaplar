@@ -150,7 +150,7 @@ Builder.load_string("""
             TextInput:
                 text: ""
                 multiline: False
-                id: y
+                id: tm1_y
         GridLayout:
             cols: 2
             Label:
@@ -160,7 +160,7 @@ Builder.load_string("""
             TextInput:
                 text: ""
                 multiline: False
-                id: x
+                id: tm1_x
         GridLayout:
             cols: 2
             Label:
@@ -170,7 +170,7 @@ Builder.load_string("""
             TextInput:
                 text: ""
                 multiline: False
-                id: semt
+                id: tm1_semt
         GridLayout:
             cols: 2
             Label:
@@ -180,160 +180,7 @@ Builder.load_string("""
             TextInput:
                 text: ""
                 multiline: False
-                id: mesafe
-        Button:
-            text: "Hesapla"
-        Button:
-            text: "Temizle"
-        Button:
-            text: "Geri"
-            on_press: root.manager.current = "giris"
-
-<TemelOdev2_giris>:
-    BoxLayout:
-        orientation: "vertical"
-        GridLayout:
-            cols: 2
-            Label:
-                text: "A nok - y değeri : "
-                size_hint_x: None
-                width: 200
-            TextInput:
-                text: ""
-                multiline: False
-                id: yA
-        GridLayout:
-            cols: 2
-            Label:
-                text: "A nok - x değeri : "
-                size_hint_x: None
-                width: 200
-            TextInput:
-                text: ""
-                multiline: False
-                id: xA
-        GridLayout:
-            cols: 2
-            Label:
-                text: "B nok - y değeri : "
-                size_hint_x: None
-                width: 200
-            TextInput:
-                text: ""
-                multiline: False
-                id: yB
-        GridLayout:
-            cols: 2
-            Label:
-                text: "B nok - x değeri : "
-                size_hint_x: None
-                width: 200
-            TextInput:
-                text: ""
-                multiline: False
-                id: yB
-        Button:
-            text: "Hesapla"
-        Button:
-            text: "Temizle"
-        Button:
-            text: "Geri"
-            on_press: root.manager.current = "giris"
-
-<TemelOdev3_giris>:
-    BoxLayout:
-        orientation: "vertical"
-        GridLayout:
-            cols: 2
-            Label:
-                text: "AB arası semt : "
-                size_hint_x: None
-                width: 200
-            TextInput:
-                text: ""
-                multiline: False
-                id: AB_semt
-        GridLayout:
-            cols: 2
-            Label:
-                text: "BC arası kırılma açısı : "
-                size_hint_x: None
-                width: 200
-            TextInput:
-                text: ""
-                multiline: False
-                id: BC_aci
-        Button:
-            text: "Hesapla"
-        Button:
-            text: "Temizle"
-        Button:
-            text: "Geri"
-            on_press: root.manager.current = "giris"
-
-<TemelOdev4_giris>:
-    BoxLayout:
-        orientation: "vertical"
-        GridLayout:
-            cols: 2
-            Label:
-                text: "A nok - y değeri : "
-                size_hint_x: None
-                width: 200
-            TextInput:
-                text: ""
-                multiline: False
-                id: yA
-        GridLayout:
-            cols: 2
-            Label:
-                text: "A nok - x değeri : "
-                size_hint_x: None
-                width: 200
-            TextInput:
-                text: ""
-                multiline: False
-                id: xA
-        GridLayout:
-            cols: 2
-            Label:
-                text: "B nok - y değeri : "
-                size_hint_x: None
-                width: 200
-            TextInput:
-                text: ""
-                multiline: False
-                id: yB
-        GridLayout:
-            cols: 2
-            Label:
-                text: "B nok - x değeri : "
-                size_hint_x: None
-                width: 200
-            TextInput:
-                text: ""
-                multiline: False
-                id: yB
-        GridLayout:
-            cols: 2
-            Label:
-                text: "C nok - y değeri : "
-                size_hint_x: None
-                width: 200
-            TextInput:
-                text: ""
-                multiline: False
-                id: yB
-        GridLayout:
-            cols: 2
-            Label:
-                text: "C nok - x değeri : "
-                size_hint_x: None
-                width: 200
-            TextInput:
-                text: ""
-                multiline: False
-                id: yB
+                id: tm1_mesafe
         Button:
             text: "Hesapla"
         Button:
@@ -349,10 +196,62 @@ Builder.load_string("""
             text: "B noktası koordinatları : "
         TextInput:
             text: ""
+            readonly: True
             multiline: False
         Button:
             text: "Geri"
             on_press: root.manager.current = "temelodev1giris"
+
+<TemelOdev2_giris>:
+    BoxLayout:
+        orientation: "vertical"
+        GridLayout:
+            cols: 2
+            Label:
+                text: "A nok - y değeri : "
+                size_hint_x: None
+                width: 200
+            TextInput:
+                text: ""
+                multiline: False
+                id: tm2_yA
+        GridLayout:
+            cols: 2
+            Label:
+                text: "A nok - x değeri : "
+                size_hint_x: None
+                width: 200
+            TextInput:
+                text: ""
+                multiline: False
+                id: tm2_xA
+        GridLayout:
+            cols: 2
+            Label:
+                text: "B nok - y değeri : "
+                size_hint_x: None
+                width: 200
+            TextInput:
+                text: ""
+                multiline: False
+                id: tm2_yB
+        GridLayout:
+            cols: 2
+            Label:
+                text: "B nok - x değeri : "
+                size_hint_x: None
+                width: 200
+            TextInput:
+                text: ""
+                multiline: False
+                id: tm2_yB
+        Button:
+            text: "Hesapla"
+        Button:
+            text: "Temizle"
+        Button:
+            text: "Geri"
+            on_press: root.manager.current = "giris"
 
 <TemelOdev2_sonuc>:
     GridLayout:
@@ -361,15 +260,48 @@ Builder.load_string("""
             text: "Semt : "
         TextInput:
             text: ""
+            readonly: True
             multiline: False
         Label:
             text: "Mesafe : "
         TextInput:
             text: ""
+            readonly: True
             multiline: False
         Button:
             text: "Geri"
             on_press: root.manager.current = "temelodev2giris"
+
+<TemelOdev3_giris>:
+    BoxLayout:
+        orientation: "vertical"
+        GridLayout:
+            cols: 2
+            Label:
+                text: "AB arası semt : "
+                size_hint_x: None
+                width: 200
+            TextInput:
+                text: ""
+                multiline: False
+                id: tm3_AB_semt
+        GridLayout:
+            cols: 2
+            Label:
+                text: "BC arası kırılma açısı : "
+                size_hint_x: None
+                width: 200
+            TextInput:
+                text: ""
+                multiline: False
+                id: tm3_BC_aci
+        Button:
+            text: "Hesapla"
+        Button:
+            text: "Temizle"
+        Button:
+            text: "Geri"
+            on_press: root.manager.current = "giris"
 
 <TemelOdev3_sonuc>:
     GridLayout:
@@ -378,10 +310,82 @@ Builder.load_string("""
             text: "B Semt : "
         TextInput:
             text: ""
+            readonly: True
             multiline: False
         Button:
             text: "Geri"
             on_press: root.manager.current = "temelodev3giris"
+
+<TemelOdev4_giris>:
+    BoxLayout:
+        orientation: "vertical"
+        GridLayout:
+            cols: 2
+            Label:
+                text: "A nok - y değeri : "
+                size_hint_x: None
+                width: 200
+            TextInput:
+                text: ""
+                multiline: False
+                id: tm4_yA
+        GridLayout:
+            cols: 2
+            Label:
+                text: "A nok - x değeri : "
+                size_hint_x: None
+                width: 200
+            TextInput:
+                text: ""
+                multiline: False
+                id: tm4_xA
+        GridLayout:
+            cols: 2
+            Label:
+                text: "B nok - y değeri : "
+                size_hint_x: None
+                width: 200
+            TextInput:
+                text: ""
+                multiline: False
+                id: tm4_yB
+        GridLayout:
+            cols: 2
+            Label:
+                text: "B nok - x değeri : "
+                size_hint_x: None
+                width: 200
+            TextInput:
+                text: ""
+                multiline: False
+                id: tm4_yB
+        GridLayout:
+            cols: 2
+            Label:
+                text: "C nok - y değeri : "
+                size_hint_x: None
+                width: 200
+            TextInput:
+                text: ""
+                multiline: False
+                id: tm4_yB
+        GridLayout:
+            cols: 2
+            Label:
+                text: "C nok - x değeri : "
+                size_hint_x: None
+                width: 200
+            TextInput:
+                text: ""
+                multiline: False
+                id: tm4_yB
+        Button:
+            text: "Hesapla"
+        Button:
+            text: "Temizle"
+        Button:
+            text: "Geri"
+            on_press: root.manager.current = "giris"
 
 <TemelOdev4_sonuc>:
     GridLayout:
@@ -390,6 +394,7 @@ Builder.load_string("""
             text: "ABC - B kırılma açısı : "
         TextInput:
             text: ""
+            readonly: True
             multiline: False
         Button:
             text: "Geri"
