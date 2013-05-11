@@ -148,7 +148,7 @@ Builder.load_string("""
                 size_hint_x: None
                 width: 200
             TextInput:
-                text: ""
+                text: "0"
                 multiline: False
                 id: tm1_y
         GridLayout:
@@ -158,7 +158,7 @@ Builder.load_string("""
                 size_hint_x: None
                 width: 200
             TextInput:
-                text: ""
+                text: "0"
                 multiline: False
                 id: tm1_x
         GridLayout:
@@ -168,7 +168,7 @@ Builder.load_string("""
                 size_hint_x: None
                 width: 200
             TextInput:
-                text: ""
+                text: "0"
                 multiline: False
                 id: tm1_semt
         GridLayout:
@@ -178,29 +178,36 @@ Builder.load_string("""
                 size_hint_x: None
                 width: 200
             TextInput:
-                text: ""
+                text: "0"
                 multiline: False
                 id: tm1_mesafe
+        GridLayout:
+            cols: 2
+            TextInput:
+                text: "y"
+                multiline: False
+                readonly: True
+                id: tm1_y_sonuc
+            TextInput:
+                text: "x"
+                multiline: False
+                readonly: True
+                id: tm1_x_sonuc
         Button:
             text: "Hesapla"
+            on_press: tm1_y_sonuc._set_text(root.temelodev1y(float(tm1_y.text), float(tm1_x.text), float(tm1_semt.text), (tm1_mesafe.text)))
+            on_press: tm1_x_sonuc._set_text(root.temelodev1x(float(tm1_y.text), float(tm1_x.text), float(tm1_semt.text), (tm1_mesafe.text)))
         Button:
             text: "Temizle"
+            on_press: tm1_y._set_text("0")
+            on_press: tm1_x._set_text("0")
+            on_press: tm1_semt._set_text("0")
+            on_press: tm1_mesafe._set_text("0")
+            on_press: tm1_y_sonuc._set_text("y")
+            on_press: tm1_x_sonuc._set_text("x")
         Button:
             text: "Geri"
             on_press: root.manager.current = "giris"
-
-<TemelOdev1_sonuc>:
-    GridLayout:
-        cols: 1
-        Label:
-            text: "B noktası koordinatları : "
-        TextInput:
-            text: ""
-            readonly: True
-            multiline: False
-        Button:
-            text: "Geri"
-            on_press: root.manager.current = "temelodev1giris"
 
 <TemelOdev2_giris>:
     BoxLayout:
@@ -212,7 +219,7 @@ Builder.load_string("""
                 size_hint_x: None
                 width: 200
             TextInput:
-                text: ""
+                text: "0"
                 multiline: False
                 id: tm2_yA
         GridLayout:
@@ -222,7 +229,7 @@ Builder.load_string("""
                 size_hint_x: None
                 width: 200
             TextInput:
-                text: ""
+                text: "0"
                 multiline: False
                 id: tm2_xA
         GridLayout:
@@ -232,7 +239,7 @@ Builder.load_string("""
                 size_hint_x: None
                 width: 200
             TextInput:
-                text: ""
+                text: "0"
                 multiline: False
                 id: tm2_yB
         GridLayout:
@@ -242,35 +249,36 @@ Builder.load_string("""
                 size_hint_x: None
                 width: 200
             TextInput:
-                text: ""
+                text: "0"
                 multiline: False
-                id: tm2_yB
+                id: tm2_xB
+        GridLayout:
+            cols: 2
+            TextInput:
+                text: "semt"
+                multiline: False
+                readonly: True
+                id: tm2_semt_sonuc
+            TextInput:
+                text: "mesafe"
+                multiline: False
+                readonly: True
+                id: tm2_mesafe_sonuc
         Button:
             text: "Hesapla"
+            on_press: tm2_semt_sonuc._set_text(root.temelodev2semt(float(tm2_yA.text), float(tm2_xA.text), float(tm2_yB.text), float(tm2_xB.text)))
+            on_press: tm2_mesafe_sonuc._set_text(root.temelodev2mesafe(float(tm2_yA.text), float(tm2_xA.text), float(tm2_yB.text), float(tm2_xB.text)))
         Button:
             text: "Temizle"
+            on_press: tm2_yA._set_text("0")
+            on_press: tm2_xA._set_text("0")
+            on_press: tm2_yB._set_text("0")
+            on_press: tm2_xB._set_text("0")
+            on_press: tm2_semt_sonuc._set_text("semt")
+            on_press: tm2_mesafe_sonuc._set_text("mesafe")
         Button:
             text: "Geri"
             on_press: root.manager.current = "giris"
-
-<TemelOdev2_sonuc>:
-    GridLayout:
-        cols: 1
-        Label:
-            text: "Semt : "
-        TextInput:
-            text: ""
-            readonly: True
-            multiline: False
-        Label:
-            text: "Mesafe : "
-        TextInput:
-            text: ""
-            readonly: True
-            multiline: False
-        Button:
-            text: "Geri"
-            on_press: root.manager.current = "temelodev2giris"
 
 <TemelOdev3_giris>:
     BoxLayout:
@@ -282,39 +290,37 @@ Builder.load_string("""
                 size_hint_x: None
                 width: 200
             TextInput:
-                text: ""
+                text: "0"
                 multiline: False
                 id: tm3_AB_semt
         GridLayout:
             cols: 2
             Label:
-                text: "BC arası kırılma açısı : "
+                text: "B açısı : "
                 size_hint_x: None
                 width: 200
             TextInput:
-                text: ""
+                text: "0"
                 multiline: False
-                id: tm3_BC_aci
+                id: tm3_B_aci
+        GridLayout:
+            cols: 1
+            TextInput:
+                text: "B semt"
+                multiline: False
+                readonly: True
+                id: tm3_bsemt_sonuc
         Button:
             text: "Hesapla"
+            on_press: tm3_bsemt_sonuc._set_text(root.temelodev3b_semt(float(tm3_AB_semt.text), float(tm3_B_aci.text)))
         Button:
             text: "Temizle"
+            on_press: tm3_AB_semt._set_text("0")
+            on_press: tm3_B_aci._set_text("0")
+            on_press: tm3_bsemt_sonuc._set_text("B Semt")
         Button:
             text: "Geri"
             on_press: root.manager.current = "giris"
-
-<TemelOdev3_sonuc>:
-    GridLayout:
-        cols: 1
-        Label:
-            text: "B Semt : "
-        TextInput:
-            text: ""
-            readonly: True
-            multiline: False
-        Button:
-            text: "Geri"
-            on_press: root.manager.current = "temelodev3giris"
 
 <TemelOdev4_giris>:
     BoxLayout:
@@ -326,7 +332,7 @@ Builder.load_string("""
                 size_hint_x: None
                 width: 200
             TextInput:
-                text: ""
+                text: "0"
                 multiline: False
                 id: tm4_yA
         GridLayout:
@@ -336,7 +342,7 @@ Builder.load_string("""
                 size_hint_x: None
                 width: 200
             TextInput:
-                text: ""
+                text: "0"
                 multiline: False
                 id: tm4_xA
         GridLayout:
@@ -346,7 +352,7 @@ Builder.load_string("""
                 size_hint_x: None
                 width: 200
             TextInput:
-                text: ""
+                text: "0"
                 multiline: False
                 id: tm4_yB
         GridLayout:
@@ -356,9 +362,9 @@ Builder.load_string("""
                 size_hint_x: None
                 width: 200
             TextInput:
-                text: ""
+                text: "0"
                 multiline: False
-                id: tm4_yB
+                id: tm4_xB
         GridLayout:
             cols: 2
             Label:
@@ -366,9 +372,9 @@ Builder.load_string("""
                 size_hint_x: None
                 width: 200
             TextInput:
-                text: ""
+                text: "0"
                 multiline: False
-                id: tm4_yB
+                id: tm4_yC
         GridLayout:
             cols: 2
             Label:
@@ -376,57 +382,64 @@ Builder.load_string("""
                 size_hint_x: None
                 width: 200
             TextInput:
-                text: ""
+                text: "0"
                 multiline: False
-                id: tm4_yB
+                id: tm4_xC
+        GridLayout:
+            cols: 1
+            TextInput:
+                text: "B kırılma açısı"
+                multiline: False
+                id: tm4_bkirilma_sonuc
         Button:
             text: "Hesapla"
+            on_press: tm4_bkirilma_sonuc._set_text(root.temelodev4b_acisi(float(tm4_yA.text), float(tm4_xA.text), float(tm4_yB.text), float(tm4_xB.text), float(tm4_yC.text), float(tm4_xC.text)))
         Button:
             text: "Temizle"
+            on_press: tm4_yA._set_text("0")
+            on_press: tm4_xA._set_text("0")
+            on_press: tm4_yB._set_text("0")
+            on_press: tm4_xB._set_text("0")
+            on_press: tm4_yC._set_text("0")
+            on_press: tm4_xC._set_text("0")
+            on_press: tm4_bkirilma_sonuc._set_text("B kırılma açısı")
         Button:
             text: "Geri"
             on_press: root.manager.current = "giris"
-
-<TemelOdev4_sonuc>:
-    GridLayout:
-        cols: 1
-        Label:
-            text: "ABC - B kırılma açısı : "
-        TextInput:
-            text: ""
-            readonly: True
-            multiline: False
-        Button:
-            text: "Geri"
-            on_press: root.manager.current = "temelodev4giris"
 """)
 
 class Giris_ekran(Screen):
     pass
 
 class TemelOdev1_giris(Screen):
-    pass
+    def temelodev1y(self,yA, xA, semt, mesafe):
+        self.yB = yB = temelodev1(float(yA), float(xA), float(semt), float(mesafe))
+        yB = yB.__getitem__(0)
+        return str(yB)
+    def temelodev1x(self,yA, xA, semt, mesafe):
+        self.xB = xB = temelodev1(float(yA), float(xA), float(semt), float(mesafe))
+        xB = xB.__getitem__(1)
+        return str(xB)
 
 class TemelOdev2_giris(Screen):
-    pass
+    def temelodev2semt(self, yA, xA, yB, xB):
+        self.semt = semt = temelodev2(float(yA), float(xA), float(yB), float(xB))
+        semt = semt.__getitem__(0)
+        return str(semt)
+    def temelodev2mesafe(self, yA, xA, yB, xB):
+        self.mesafe = mesafe = temelodev2(float(yA), float(xA), float(yB), float(xB))
+        mesafe = mesafe.__getitem__(1)
+        return str(mesafe)
 
 class TemelOdev3_giris(Screen):
-    pass
+    def temelodev3b_semt(self, AB_semt, B_acisi):
+        self.b_semt = b_semt = temelodev3(float(AB_semt), float(B_acisi))
+        return str(b_semt)
 
 class TemelOdev4_giris(Screen):
-    pass
-
-class TemelOdev1_sonuc(Screen):
-    pass
-
-class TemelOdev2_sonuc(Screen):
-    pass
-
-class TemelOdev3_sonuc(Screen):
-    pass
-
-class TemelOdev4_sonuc(Screen):
-    pass
+    def temelodev4b_acisi(self,yA, xA, yB, xB, yP, xP):
+        self.b_kirilma = b_kirilma = temelodev4(float(yA), float(xA), float(yB), float(xB), float(yP), float(xP))
+        return str(b_kirilma)
 
 sm = ScreenManager()
 sm.add_widget(Giris_ekran(name="giris"))
@@ -435,11 +448,6 @@ sm.add_widget(TemelOdev1_giris(name="temelodev1giris"))
 sm.add_widget(TemelOdev2_giris(name="temelodev2giris"))
 sm.add_widget(TemelOdev3_giris(name="temelodev3giris"))
 sm.add_widget(TemelOdev4_giris(name="temelodev4giris"))
-
-sm.add_widget(TemelOdev1_sonuc(name="temelodev1sonuc"))
-sm.add_widget(TemelOdev2_sonuc(name="temelodev2sonuc"))
-sm.add_widget(TemelOdev3_sonuc(name="temelodev3sonuc"))
-sm.add_widget(TemelOdev4_sonuc(name="temelodev4sonuc"))
 
 class android(App):
     title = 'Topoğrafya Temel Ödev Hesapları'
