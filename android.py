@@ -402,7 +402,7 @@ Builder.load_string("""
             on_press: tm4_xB._set_text("0")
             on_press: tm4_yC._set_text("0")
             on_press: tm4_xC._set_text("0")
-            on_press: tm4_bkirilma_sonuc._set_text("B kırılma açısı")
+            on_press: tm4_bkirilma_sonuc._set_text("B kirilma acisi")
         Button:
             text: "Geri"
             on_press: root.manager.current = "giris"
