@@ -388,7 +388,7 @@ Builder.load_string("""
         GridLayout:
             cols: 1
             TextInput:
-                text: "B kırılma açısı"
+                text: "B kirilma acisi"
                 multiline: False
                 id: tm4_bkirilma_sonuc
         Button:
