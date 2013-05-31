@@ -14,13 +14,13 @@ from mat_fonk import *
 
 #  Temel ödev hesaplamalarındaki sonucun hangi bölge olduğunu tespit etmek için.
 def bolgesecimi(y, x):
-    if (y >= 0) and (x >= 0):
+    if (y >= 0) and (x >= 0): # 1. Bölge y+ x+
         return 0
-    if (y >= 0) and (x < 0):
+    if (y >= 0) and (x < 0): # 2. Bölge y+ x+
         return 200
-    if (y < 0) and (x < 0):
+    if (y < 0) and (x < 0): # 3. Bölge y- x-
         return 200
-    if (y < 0) and (x >= 0):
+    if (y < 0) and (x >= 0): # 4. Bölge y- x+
         return 400
 
 

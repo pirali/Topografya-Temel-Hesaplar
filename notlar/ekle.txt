@@ -1,0 +1,11 @@
+- Hesaplanan koordinat, semt ve mesafelerin çıktılarının uzun olması yerine,
+    ihtiyaç olduğu kadar kısaltmak ve sonucu yuvarlamak gerekiyor.
+    >>> round(25.5555)
+    26
+    >>> round(25.4444)
+    25
+    >>> round(25.5555, 2)
+    25.56
+    yukarıdaki örneklerdeki gibi standart round fonksiyonu ihtiyacı karşılıyor.
+
+-

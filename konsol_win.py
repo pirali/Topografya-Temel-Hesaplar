@@ -1,0 +1,90 @@
+#!/usr/bin/env python
+# -*- coding: cp1254 -*-
+
+"""
+Topoðrafya Temel Hesaplar programýnýn
+konsoldan menu uygulamasý.
+"""
+
+import locale
+
+import lib.temelodevler
+
+import lib.mat_fonk
+
+import lib.konsol_fonk
+
+#Türkçe karakterler düzeltmesis
+locale.setlocale(locale.LC_ALL, "")
+
+menu_calistir = True
+
+print "Topoðrafya Temel Hesaplar Programý\n"
+print "Yazan   : Özkan ÞEN"
+print "E-Posta : ozkansen@gmail.com"
+print "Görüþ ve önerilerinizi elektronik posta yoluyla iletebilirsiniz.\n"
+
+while menu_calistir:
+    print "1. A noktasý koordinatlarý, semt ve mesafe. \n\t\tHesaplanan : B noktasý koordinatý."
+    print "2. A noktasý ve B noktasý koordinatlarý. \n\t\tHesaplanan : AB arasý semt ve mesafe."
+    print "3. AB arasý semt ve BC arasý kýrýlma açýsý. \n\t\tHesaplanan : BC semt."
+    print "4. A, B, C noktasý koordinatlarý. \n\t\tHesaplanan BA - BC arasý kýrýlma açýsý."
+    print "5. Programdan çýkýþ."
+    try:
+        sec = input("Seçmek istediðiniz iþlem : ")
+    except:
+        print "Menüde olmayan birþeyi seçtiniz."
+        continue
+    if sec == 1:
+        try:
+            print "1. A noktasý koordinatlarý, semt ve mesafe. \nHesaplanan : B noktasý koordinatý."
+            yA = input("A noktasý y deðeri : ")
+            xA = input("A noktasý x deðeri : ")
+            semt = input("Semt açýsýný giriniz : ")
+            mesafe = input("Mesafe giriniz : ")
+            sonuc = lib.temelodevler.temelodev1(yA, xA, semt, mesafe)
+            print "B noktasý y deðeri : ", sonuc.__getitem__(0), "\nB noktasý x deðeri : ", sonuc.__getitem__(1)
+            input("Devam etmek için enter tuþuna basýnýz.")
+        except:
+            continue
+    elif sec == 2:
+        try:
+            print "2. A noktasý ve B noktasý koordinatlarý. \nHesaplanan : AB arasý semt ve mesafe."
+            yA = input("A noktasý y deðeri : ")
+            xA = input("A noktasý x deðeri : ")
+            yB = input("B noktasý y deðeri : ")
+            xB = input("B noktasý x deðeri : ")
+            sonuc = lib.temelodevler.temelodev2(yA, xA, yB, xB)
+            print "Semt deðeri : ", sonuc.__getitem__(0), "\nMesafe : ", sonuc.__getitem__(1)
+            input("Devam etmek için enter tuþuna basýnýz.")
+        except:
+            continue
+    elif sec == 3:
+        try:
+            print "3. AB arasý semt ve BC arasý kýrýlma açýsý. \nHesaplanan : BC semt."
+            AB_semt = input("AB semt : ")
+            BC_kirilma = input("BC kýrýlma : ")
+            sonuc = lib.temelodevler.temelodev3(AB_semt, BC_kirilma)
+            print "BC semt deðeri : ", sonuc
+            input("Devam etmek için enter tuþuna basýnýz.")
+        except:
+            continue
+    elif sec == 4:
+        try:
+            print "4. A, B, C noktasý koordinatlarý. \nHesaplanan BA - BC arasý kýrýlma açýsý."
+            yA = input("A noktasý y deðeri : ")
+            xA = input("A noktasý x deðeri : ")
+            yB = input("B noktasý y deðeri : ")
+            xB = input("B noktasý x deðeri : ")
+            yC = input("C noktasý y deðeri : ")
+            xC = input("C noktasý x deðeri : ")
+            sonuc = lib.temelodevler.temelodev4(yA, xA, yB, xB, yC, xC)
+            print "BA ve BC arasý kýrýlma açýsý : ", sonuc
+            input("Devam etmek için enter tuþuna basýnýz.")
+        except:
+            continue
+    elif sec == 5:
+        menu_calistir = False
+    else:
+        continue
+        # None
