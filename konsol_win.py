@@ -9,10 +9,8 @@ konsoldan menu uygulamasý.
 import locale
 
 import lib.temelodevler
-
 import lib.mat_fonk
-
-import lib.konsol_fonk
+from lib.konsol_fonk import *
 
 #Türkçe karakterler düzeltmesis
 locale.setlocale(locale.LC_ALL, "")
@@ -38,49 +36,49 @@ while menu_calistir:
     if sec == 1:
         try:
             print "1. A noktasý koordinatlarý, semt ve mesafe. \nHesaplanan : B noktasý koordinatý."
-            yA = input("A noktasý y deðeri : ")
-            xA = input("A noktasý x deðeri : ")
-            semt = input("Semt açýsýný giriniz : ")
-            mesafe = input("Mesafe giriniz : ")
+            yA = kontrol(raw_input("A noktasý y deðeri : "))
+            xA = kontrol(raw_input("A noktasý x deðeri : "))
+            semt = kontrol(raw_input("Semt açýsýný giriniz : "))
+            mesafe = kontrol(raw_input("Mesafe giriniz : "))
             sonuc = lib.temelodevler.temelodev1(yA, xA, semt, mesafe)
             print "B noktasý y deðeri : ", sonuc.__getitem__(0), "\nB noktasý x deðeri : ", sonuc.__getitem__(1)
-            input("Devam etmek için enter tuþuna basýnýz.")
+            raw_input("Devam etmek için enter tuþuna basýnýz.")
         except:
             continue
     elif sec == 2:
         try:
             print "2. A noktasý ve B noktasý koordinatlarý. \nHesaplanan : AB arasý semt ve mesafe."
-            yA = input("A noktasý y deðeri : ")
-            xA = input("A noktasý x deðeri : ")
-            yB = input("B noktasý y deðeri : ")
-            xB = input("B noktasý x deðeri : ")
+            yA = kontrol(raw_input("A noktasý y deðeri : "))
+            xA = kontrol(raw_input("A noktasý x deðeri : "))
+            yB = kontrol(raw_input("B noktasý y deðeri : "))
+            xB = kontrol(raw_input("B noktasý x deðeri : "))
             sonuc = lib.temelodevler.temelodev2(yA, xA, yB, xB)
             print "Semt deðeri : ", sonuc.__getitem__(0), "\nMesafe : ", sonuc.__getitem__(1)
-            input("Devam etmek için enter tuþuna basýnýz.")
+            raw_input("Devam etmek için enter tuþuna basýnýz.")
         except:
             continue
     elif sec == 3:
         try:
             print "3. AB arasý semt ve BC arasý kýrýlma açýsý. \nHesaplanan : BC semt."
-            AB_semt = input("AB semt : ")
-            BC_kirilma = input("BC kýrýlma : ")
+            AB_semt = kontrol(raw_input("AB semt : "))
+            BC_kirilma = kontrol(raw_input("BC kýrýlma : "))
             sonuc = lib.temelodevler.temelodev3(AB_semt, BC_kirilma)
             print "BC semt deðeri : ", sonuc
-            input("Devam etmek için enter tuþuna basýnýz.")
+            raw_input("Devam etmek için enter tuþuna basýnýz.")
         except:
             continue
     elif sec == 4:
         try:
             print "4. A, B, C noktasý koordinatlarý. \nHesaplanan BA - BC arasý kýrýlma açýsý."
-            yA = input("A noktasý y deðeri : ")
-            xA = input("A noktasý x deðeri : ")
-            yB = input("B noktasý y deðeri : ")
-            xB = input("B noktasý x deðeri : ")
-            yC = input("C noktasý y deðeri : ")
-            xC = input("C noktasý x deðeri : ")
+            yA = kontrol(raw_input("A noktasý y deðeri : "))
+            xA = kontrol(raw_input("A noktasý x deðeri : "))
+            yB = kontrol(raw_input("B noktasý y deðeri : "))
+            xB = kontrol(raw_input("B noktasý x deðeri : "))
+            yC = kontrol(raw_input("C noktasý y deðeri : "))
+            xC = kontrol(raw_input("C noktasý x deðeri : "))
             sonuc = lib.temelodevler.temelodev4(yA, xA, yB, xB, yC, xC)
             print "BA ve BC arasý kýrýlma açýsý : ", sonuc
-            input("Devam etmek için enter tuþuna basýnýz.")
+            raw_input("Devam etmek için enter tuþuna basýnýz.")
         except:
             continue
     elif sec == 5:
