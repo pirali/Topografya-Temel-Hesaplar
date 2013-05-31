@@ -27,7 +27,7 @@ def bolgesecimi(y, x):
 def temelodev1(yA, xA, semt, mesafe):
     yB = yA + ( mesafe * math.sin(grad2radyan(semt)))
     xB = xA + ( mesafe * math.cos(grad2radyan(semt)))
-    return yB, xB
+    return round(yB, 3), round(xB, 3)
 
 
 def temelodev2(yA, xA, yB, xB):
@@ -44,7 +44,7 @@ def temelodev2(yA, xA, yB, xB):
     except:
         mesafe = delta_x / math.cos(grad2radyan(semt))
 
-    return semt, mesafe
+    return round(semt, 4), round(mesafe, 3)
 
 
 def temelodev3(AB_semt, B_acisi):
@@ -57,14 +57,14 @@ def temelodev3(AB_semt, B_acisi):
         B_semt = B_semt - 600
     else:
         pass
-    return B_semt
+    return round(B_semt, 4)
 
 
 def temelodev4(yA, xA, yB, xB, yP, xP):
     BP = temelodev2(yP, xP, yB, xB)
     BA = temelodev2(yA, xA, yB, xB)
     B_acisi = (BP.__getitem__(0) - BA.__getitem__(0))
-    return B_acisi
+    return round(B_acisi, 4)
 
 
 if __name__ == "__main__":
