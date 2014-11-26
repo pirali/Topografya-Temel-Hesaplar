@@ -405,7 +405,9 @@ Builder.load_string("""
             on_press: tm4_bkirilma_sonuc._set_text("B kirilma acisi")
         Button:
             text: "Geri"
-            on_press: root.manager.current = "giris"
+            on_press:
+                root.manager.transition.direction = "right"
+                root.manager.current = "giris"
 """)
 
 class Giris_ekran(Screen):
